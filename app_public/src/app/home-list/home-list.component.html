@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-md-5">
+        <button class="btn btn-warning margin" (click)="createNewFood()">Create New</button>
+        <br/>
+    <ul class="list-group">
+    <li class="list-group-item" *ngFor="let food of foods" (click)="selectFood(food)">
+        <a class="text">Name: {{food.name}}</a>
+        <p>Date: {{food.date | date }} </p>
+        <p>Expiry: {{food.expiry |date }}</p>
+        <p>Left-Overs: {{food.left_overs}}</p>
+        <p>Quantity: {{food.quantity}}</p>
+    </li>
+    </ul>
+    
+</div>
+    <div class="col-md-5 col-md-offset-2">
+        <app-details-page
+              [food]="selectedFood"
+              [createHandler]="addFood"
+              [updateHandler]="updateFood"
+              [deleteHandler]="deleteFood">
+        </app-details-page>
+    </div>
+    
+</div>

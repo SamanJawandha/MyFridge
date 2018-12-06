@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1= pageHeader.title
+         small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-xs-12.col-sm-8
+      .error= message
+       .row.list-group
+          .row
+            .col-12.col-md-8
+              .error= message
+               app-home-list Loading...
+          .col-xs-12.list-group-item
+            h4 
+              a(href="/food/#{food._id}")= food.name
+              small &nbsp;
+             h4 Date: #{food.date}
+             h4 Expiry: #{food.expiry}
+             h4 Left Overs: #{food.left_over}
+             h4 Quantity: #{food.quantity} 
+    .col-xs-12.col-sm-4 
+      p.lead= sidebar
+block scripts	
+    script(src='/build/inline.2adb09f7c7242b46e6bf.bundle.js')
+    script(src='/build/polyfills.66844a798673c8729682.bundle.js')
+    script(src='/build/vendor.a658dcdb7c5e662e3c0f.bundle.js')
+    script(src='/build/main.60625817f6784613d1e2.bundle.js')
